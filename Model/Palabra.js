@@ -2,11 +2,11 @@ class Palabra {
   palabras = [];
   create = async (palabra) => {
     this.palabras.push(palabra);
-    return "ok";
+    return "Ok";
   };
 
   getAll = async () => {
-    return this.palabras.join(" ");
+    return this.palabras.join("  ");
   };
 
   delete = async (palabra) => {
@@ -27,6 +27,8 @@ class Palabra {
       throw error;
     }
   };
+
+
 }
 
 export default Palabra;

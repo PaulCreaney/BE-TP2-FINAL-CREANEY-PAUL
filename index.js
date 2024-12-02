@@ -12,5 +12,5 @@ app.use(routes)
 
 
 app.listen(PORT, () => {
-  console.log(`servidor ok en ${PORT}`);
+  console.log(`Servidor ok en ${PORT}`);
 });

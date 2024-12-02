@@ -41,7 +41,7 @@ class PalabrasController {
       const data = await this.palabra.getCatidadPalabrasService(cantidad);
       res.status(200).send(data);
     } catch (error) {
-      res.status(422).send("cantidad no válida");
+      res.status(422).send("Cantidad no válida");
     }
   };
 }
