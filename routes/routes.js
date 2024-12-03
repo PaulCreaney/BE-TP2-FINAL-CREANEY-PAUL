@@ -1,15 +1,18 @@
 import { Router } from "express";
-import PalabrasController from "../controllers/PalabrasController.js";
-import { notNullDataValidate } from "../middlewares/notNullDataValidate.js";
+import JuegoController from "../controllers/JuegoController.js";
+import { ValidacionDatos } from "../middlewares/ValidacionDatos.js";
 
 
 const routes = Router();
 
-const palabrasController = new PalabrasController();
+const juegoController = new JuegoController();
 
-routes.post("/",notNullDataValidate, palabrasController.createPalabra);
-routes.get("/", palabrasController.getPalabras);
-routes.delete("/:palabra", palabrasController.deletePalabra);
-routes.get("/:cantidad", palabrasController.getCatidadPalabras);
+
+routes.get("/ventas/categoria", juegoController.unidadesVendidasPorCategoria);
+routes.get("/inventario", juegoController.listarInventario);
+routes.post("/cargarJuego",ValidacionDatos, juegoController.registrarJuego);
+routes.get("/ventas", juegoController.totalUnidadesVendidas);
+routes.post("/comprar", juegoController.comprar);
+
 
 export default routes;
